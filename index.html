@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="icon" href="./img/logo.png" type="image/x-icon" />
     <title>首页</title>
     <style>
         * {
@@ -16,7 +16,7 @@
         body {
             width: 100%;
             height: 100%;
-            cursor: url("../img/cursor.ico"), pointer;
+            cursor: url("./img/cursor.ico"), pointer;
         }
 
         .box {
@@ -82,7 +82,7 @@
 
         .btn:hover {
             opacity: .7;
-            cursor: url("../img/cursor.ico"), pointer;
+            cursor: url("./img/cursor.ico"), pointer;
         }
 
         .btn:focus {
@@ -96,7 +96,7 @@
     <div class="box">
         <main>
             <div class="logo_box">
-                <img class="logo" src="../img/logo.png" alt="logo">
+                <img class="logo" src="./img/logo.png" alt="logo">
             </div>
             <div class="name">HuQ</div>
             <div class="btn_box">
@@ -114,16 +114,16 @@
 
         var btn = document.getElementsByTagName('Button');
         btn[0].onclick = function () {
-            window.location.href = "./jianli.html";
+            window.location.href = "./pages/jianli.html";
         }
         btn[1].onclick = function () {
-            window.location.href = "./blog.html";
+            window.location.href = "./pages/blog.html";
         }
         btn[2].onclick = function () {
-            window.location.href = "./photo.html";
+            window.location.href = "./pages/photo.html";
         }
         btn[3].onclick = function () {
-            window.location.href = "./fell.html";
+            window.location.href = "./pages/fell.html";
         }
     </script>
     <script>
