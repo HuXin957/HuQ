@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html ondragstart="return false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="3D相册">
+    <meta name="description" content="旋转相册">
+    <title>个人相册</title>
+    <style>
+       *{margin: 0;padding: 0;}
+		body{
+            background:#06081B;
+			overflow: hidden;
+			user-select:none;
+            cursor: url("../img/cursor.ico"),pointer;
+		}
+		#perspective{
+			perspective:800px;
+		}
+		#wrap{
+			position: relative;
+			width: 133px;
+			height: 200px;
+			margin: 150px auto;
+			transform-style: preserve-3d;
+			transform: rotateX(-15deg) rotateY(0deg);
+		}
+		#wrap .img{
+			width: 133px;
+			height: 200px;
+			position: absolute;
+			list-style: none;
+		}
+		#wrap img{
+            width:133px;
+            height:200px;
+			position: absolute;
+			transition: 1s;
+			-webkit-box-reflect: below 5px -webkit-linear-gradient(top,rgba(0,0,0,0) 30%,rgba(0,0,0,.5) 100%);
+		}
+		#wrap img:hover{
+			transform: scale(1.4);
+		}
+        .back{
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="perspective">
+        <div class="div_btn">
+            <img class="back" id="btn" src="../img/back.png" alt="back">
+        </div>
+		<div id="wrap">
+			<div>
+				<img id="center" src="../img/photo1.jpg">
+            </div>
+			<li class="img">
+			    <img src="../img/photo1.jpg">
+			</li>
+			<li class="img">
+                <img src="../img/photo2.jpg">
+			</li>
+			<li class="img">
+                <img src="../img/photo3.jpg">
+			</li>
+			<li class="img">
+                <img src="../img/photo4.jpg">
+			</li>
+			<li class="img">
+                <img src="../img/photo5.jpg">
+			</li>
+			<li class="img">
+                <img src="../img/photo6.jpg">
+			</li>
+			<li class="img">
+				<img src="../img/photo7.jpg">
+            </li>
+            <li class="img">
+                <img src="../img/photo8.jpg"> 
+			</li>
+			<li class="img">
+				<img src="../img/photo9.jpg">
+			</li>
+			<li class="img">
+                <img src="../img/photo10.jpg"> 
+			</li>
+			<li class="img">
+                <img src="../img/photo11.jpg"> 
+			</li>
+		</div>
+	</div>
+    <script type="text/javascript">
+    var oImg = document.getElementsByClassName("img");
+    var center=document.getElementById("center")
+     
+		var deg = 360/oImg.length;
+		window.onload = function(){
+			for(var i = 0; i < oImg.length;i++){
+				oImg[i].style.transform = "rotateY("+deg*i+"deg) translateZ(350px)";
+                oImg[i].style.transition = "1s "+(oImg.length-i)*0.1+"s";
+                oImg[i].onclick=function(e){
+                    
+                    center.src= e.srcElement.src
+                }
+			}
+        }
+        
+		var newX,newY,sX,sY,lX,lY,rotateX = -15,rotateY = 0;
+		var oWrap = document.getElementById("wrap");
+		document.onmousedown = function(event){
+			lX = event.clientX;
+			lY = event.clientY;
+			this.onmousemove = function(event){
+				newX = event.clientX;
+				newY = event.clientY;
+				
+				sX = newX - lX;/*求两次移动距离差*/
+				sY = newY - lY;
+				
+				rotateX -= sY*0.2; 
+				rotateY += sX*0.1;
+				
+				oWrap.style.transform=" rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)";
+
+				//当新的值用完就变成旧的值
+				lX = newX;
+				lY = newY;
+			}
+			this.onmouseup = function(event){
+				this.onmousemove = null;
+				var timer = setInterval(function(){
+					sX *= 0.95;
+					sY *= 0.95;
+					
+					rotateX -= sY*0.2; 
+					rotateY += sX*0.1;
+					
+					oWrap.style.transform=" rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)";
+					
+					if(Math.abs(sX) < 0.1 && Math.abs(sY) < 0.1){
+						clearInterval(timer);
+					}
+				},13);
+			}
+        }
+        var btn = document.getElementById('btn');
+        btn.onclick=function(){
+            window.history.go(-1); 
+        }
+    </script>
+</body>
+
+</html>

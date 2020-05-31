@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <title>个人感悟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            cursor: url("../img/cursor.ico"), pointer;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .div_btn {
+            width: 100%;
+            position: fixed;
+        }
+
+        .back {
+            margin-left: 50px;
+        }
+
+        .copyright {
+            display: flex;
+            flex: 1;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+        .main_box{
+            color:#333;
+            padding:20px;
+            width:800px;
+            font-size: 18px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="div_btn">
+            <img class="back" id="btn" src="../img/back.png" alt="back">
+        </div>
+        <section>
+            <div class="main_box">
+                1、看一轮皓月如何将岁月的影子拉长，看流莹的美好将彼此的双眼缠绕。人生就像是旅行，不必在乎目的地，在乎的是沿途的风景以及看风景的心情！穿越时光的隧道，感受岁月的苍桑，一路与你风雨兼程。
+            </div>
+            <div class="main_box">
+                2、每个人都有两个自我，一个在黑暗中醒着，一个在光明中睡着。有些人与事，是你必须要路过的驿站，好坏、成败聚散、爱恨，都无所谓，它只帮你尝遍人生百味，阅尽世间百态，看淡世事冷暖。所有的经历，都是催熟的良药。重在当下，不论未来如何，今后怎样，实实在在地抓好今天，就是装点了今后，美化了未来。
+            </div>
+            <div class="main_box">
+                3、有时我也会迷惘，面对繁杂的世事。人生，就是一道难解的题，边走边解，能解就解，不能则不解，放下，慢慢再解。事情，不因你烦恼而顺利，不因你不快而变易，学会放下，懂得看开、看淡。真的放开，一切也容易了。
+            </div>
+            <div class="main_box">
+                4、有些人在你的生命中来了又去，这并不稀奇。可总觉着有句话想说，却死活想不起来要说的是什么。再见面笑着聊天，春天正好阳光正好，道别转身，却不知为什么眼泪掉下来。这才想起要说的话：“谢谢你曾走进我心里。”不管对方听到没听到，都没关系。
+            </div>
+            <div class="main_box">
+                5、你对自己好，就会变得更出色，在别人眼里，更加有价值。而你对别人付出太多，自己就会变得更薄弱，你的利用价值完了，也就完了。所以，学会爱自己，宠自己，把更多的机会留给自己。别总是对别人太好，老想着取悦别人，你越在乎别人，就越卑微。只有取悦自己，并让别人来取悦你，才会令你变得更有价值。
+            </div>
+            <div class="main_box">
+                6、不管什么样的选择，都意味着一种人生的历程与况味，我们没有办法预知某种选择的机会成本，人生这条单行道的最终，赋予它意义的应该是我们自己。心中怀有使命感，失落感，危机感的人才是不平凡的人。若时时原谅自己，必常常迷失自己；若处处善待自己，必屡屡失却自己。
+            </div>
+          
+        </section>
+        <div class="copyright">
+            CD Of China | Copyright © 2020-present HuQ
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick=function(){
+            window.history.go(-1); 
+        }
+    </script>
+</body>
+</html>

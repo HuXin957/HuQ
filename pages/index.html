@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <title>首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            cursor: url("../img/cursor.ico"), pointer;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            background-image: linear-gradient(#79F1A4, #79F1A4);
+        }
+
+        main {
+            height: 100%;
+            width: 600px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .logo_box {
+            margin-top: 200px;
+        }
+
+        .logo {
+            height: 150px;
+            width: 150px;
+        }
+
+        .name {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .copyright {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .btn_box {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 150px;
+            border-radius: 8px;
+            background-color: #28C76F;
+            border: 0;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+            z-index: 99;
+        }
+
+        .btn:hover {
+            opacity: .7;
+            cursor: url("../img/cursor.ico"), pointer;
+        }
+
+        .btn:focus {
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <main>
+            <div class="logo_box">
+                <img class="logo" src="../img/logo.png" alt="logo">
+            </div>
+            <div class="name">HuQ</div>
+            <div class="btn_box">
+                <Button id="btn" class="btn">个人简历</Button>
+                <Button id="blog" class="btn">个人博客</Button>
+                <Button id="photo" class="btn">个人相册</Button>
+                <Button id="fell" class="btn">个人感悟</Button>
+            </div>
+            <div class="copyright">
+                CD Of China | Copyright © 2020-present HuQ
+            </div>
+        </main>
+    </div>
+    <script>
+
+        var btn = document.getElementsByTagName('Button');
+        btn[0].onclick = function () {
+            window.location.href = "./jianli.html";
+        }
+        btn[1].onclick = function () {
+            window.location.href = "./blog.html";
+        }
+        btn[2].onclick = function () {
+            window.location.href = "./photo.html";
+        }
+        btn[3].onclick = function () {
+            window.location.href = "./fell.html";
+        }
+    </script>
+    <script>
+        ! function () {
+
+            function n(n, e, t) {
+
+                return n.getAttribute(e) || t
+
+            }
+
+            function e(n) {
+
+                return document.getElementsByTagName(n)
+
+            }
+
+            function t() {
+
+                var t = e("script"),
+                    o = t.length,
+                    i = t[o - 1];
+
+                return {
+
+                    l: o,
+                    z: n(i, "zIndex", 1),
+                    o: n(i, "opacity", 0.5),
+                    c: n(i, "color", "0, 0, 1"),
+                    n: n(i, "count", 200)
+
+                }
+
+            }
+
+            function o() {
+
+                a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+
+                    c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body
+                    .clientHeight
+
+            }
+
+            function i() {
+
+                r.clearRect(0, 0, a, c);
+
+                var n, e, t, o, m, l;
+
+                s.forEach(function (i, x) {
+
+                        for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y <
+                            0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[
+                                e],
+
+                            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+
+                                l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i
+                                        .y -= .03 * m),
+
+                                    t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle =
+                                    "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r
+                                    .stroke()))
+
+                    }),
+
+                    x(i)
+
+            }
+
+            var a, c, u, m = document.createElement("canvas"),
+
+                d = t(),
+                l = "c_n" + d.l,
+                r = m.getContext("2d"),
+
+                x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window
+                .mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+
+                function (n) {
+
+                    window.setTimeout(n, 1e3 / 45)
+
+                },
+
+                w = Math.random,
+                y = {
+                    x: null,
+                    y: null,
+                    max: 2e4
+                };
+            m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0]
+                .appendChild(m), o(), window.onresize = o,
+
+                window.onmousemove = function (n) {
+
+                    n = n || window.event, y.x = n.clientX, y.y = n.clientY
+
+                },
+
+                window.onmouseout = function () {
+
+                    y.x = null, y.y = null
+
+                };
+
+            for (var s = [], f = 0; d.n > f; f++) {
+
+                var h = w() * a,
+                    g = w() * c,
+                    v = 2 * w() - 1,
+                    p = 2 * w() - 1;
+                s.push({
+                    x: h,
+                    y: g,
+                    xa: v,
+                    ya: p,
+                    max: 6e3
+                })
+
+            }
+
+            u = s.concat([y]),
+
+                setTimeout(function () {
+                    i()
+                }, 100)
+
+        }();
+    </script>
+</body>
+
+</html>

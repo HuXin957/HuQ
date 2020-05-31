@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <title>个人博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            cursor: url("../img/cursor.ico"), pointer;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding:50px 50px 0 50px;
+        }
+
+        .box .main_box {
+            width: 800px;
+            height: 160px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 10px #999;
+        }
+
+        .box div p {
+            font-size: 24px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .box .main_box main {
+            font-size: 16px;
+            height: 65px;
+            color: #333;
+            margin-top: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+        }
+
+        a {
+            color: dodgerblue;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        footer {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .author {
+            color: #999;
+        }
+
+        .div_btn {
+            width: 100%;
+            position: fixed;
+        }
+
+        .back {
+            margin-left: 50px;
+        }
+
+        .time {
+            margin-right: 18px;
+        }
+        .copyright {
+            display: flex;
+            flex: 1;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="div_btn">
+            <img class="back" id="btn" src="../img/back.png" alt="back">
+        </div>
+        <div class="main_box">
+            <p>经典面试题:1000瓶药，1瓶有毒，找毒药</p>
+            <main>
+                问：现有1000瓶药，其中999瓶无毒，只有一瓶有毒。已知小白鼠喝了毒药1小时后会死，现给你10只小白鼠，和1个小时的时间，让你找出有毒的那瓶药。
+                备注：每一瓶药的量足够每只小白鼠同时服用。
+                当看到这么一道题的时候，我相信很多IT界的小伙伴都会第一瞬间想到二分法，左边500瓶，右边500瓶…当然，我也一样。
+                显然，这样的想法只能暴露出自己太年轻了。
+            </main>
+            <footer>
+                <a href="https://blog.csdn.net/weixin_45932565/article/details/104579331">查看原文</a>
+                <div class="author">
+                    <span class="time">Time：2020-02-29 19:34:53</span>
+                    <span>author：HuQ</span>
+                </div>
+            </footer>
+        </div>
+        <div class="main_box">
+            <p>1∶1详解淘宝flexible源码</p>
+            <main>
+                首先这个功能是用来做移动端适配的，主要就是通过判断不同屏幕，将屏幕分成10等份，然后通过设置几等份，来设置像素，这个的作用就是将你写的px转换为rem。还有一点需要注意的是，这是一个立即执行函数！先科普一下立即执行函数吧：
+            </main>
+            <footer>
+                <a href="https://blog.csdn.net/weixin_45932565/article/details/104436281">查看原文</a>
+                <div class="author">
+                    <span class="time">Time：2020-02-21 22:36:46</span>
+                    <span>author：HuQ</span>
+                </div>
+            </footer>
+        </div>
+        <div class="main_box">
+            <p>Vue自定义指令封装及用法</p>
+            <main>
+                vue中的指令很多，例如v-if,v-for,v-model等等，当然尤大大也给我们提供了自定义属性这一
+                玩意儿，让我们也可自己定义指令,例如v-hello，v-fuck等等，那我们为什么需要自定义指令呢？那好，我就问你一句话，你在写项目当中有没有某一刻有想要操纵DOM
+                的冲动，但是vue很明确是不能直接操纵DOM的，那这时候就可以用到我们的自定义指令了。具体操作，如下所示：
+            </main>
+            <footer>
+                <a href="https://blog.csdn.net/weixin_45932565/article/details/104478662">查看原文</a>
+                <div class="author">
+                    <span class="time">Time：2020-02-24 16:02:41</span>
+                    <span>author：HuQ</span>
+                </div>
+            </footer>
+        </div>
+        <div class="main_box">
+            <p>elementUI中表格之filters用法</p>
+            <main>
+                前几天在做项目的过程中，用到了elementUI表格。当时的遇到的问题是需要通过从后台返回来的状态码，根据判断将它渲染成文字数据。由于我是刚接手代码，在代码中看到了filters这个属性，感觉可以用它实现。到最后才发现，其实filters是用来做筛选功能的，下面就和大家一起学习一下这个知识点吧。
+            </main>
+            <footer>
+                <a href="https://blog.csdn.net/weixin_45932565/article/details/105334502">查看原文</a>
+                <div class="author">
+                    <span class="time">Time：2020-04-05 23:32:53</span>
+                    <span>author：HuQ</span>
+                </div>
+            </footer>
+        </div>
+        <div class="main_box">
+            <p>Vuex看完这一篇就会了</p>
+            <main>
+                先介绍一下vuex：vuex是vue.js中用来做状态管理的一个插件，可以解决组件与组件之间通讯问题,然而之前我们也可以通过bus事件总线来解决，但是一旦项目大了，这种办法就会变得很复杂，不便于代码管理。所以作者为我们提供了这么一个仓库机制的插件。
+            </main>
+            <footer>
+                <a href="https://blog.csdn.net/weixin_45932565/article/details/104560754">查看原文</a>
+                <div class="author">
+                    <span class="time">Time：2020-02-28 19:44:41</span>
+                    <span>author：HuQ</span>
+                </div>
+            </footer>
+        </div>
+        <div class="copyright">
+            CD Of China | Copyright © 2020-present HuQ
+        </div>
+
+    </div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            window.history.go(-1);
+        }
+    </script>
+</body>
+
+</html>

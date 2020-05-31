@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <title>个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            cursor: url("../img/cursor.ico"),pointer;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .copyright {
+            display: flex;
+            flex: 1;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+        .div_btn{
+            width:100%;
+            position:fixed;
+        }
+        .back{
+            margin-left: 50px;
+        }
+    
+    
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="div_btn">
+            <img class="back" id="btn" src="../img/back.png" alt="back">
+        </div>
+        <div>
+            <img src="../img/a.png" alt="jianli">
+        </div>
+        <div>
+            <img src="../img/b.png" alt="jianli">
+        </div>
+    
+        <div class="copyright">
+            CD Of China | Copyright © 2020-present HuQ
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick=function(){
+            window.history.go(-1); 
+        }
+    </script>
+</body>
+</html>
