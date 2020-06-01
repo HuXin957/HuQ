@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            cursor: url("../img/cursor.ico"),pointer;
+        }
+        .map{
+            height:600px;
+            width:900px;
+            background: #333;
+            margin:0 auto;
+            position: relative;
+            cursor: none;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+        .snake{
+            width:30px;
+            height:30px;
+            position:absolute;
+            border:2px solid rgba(0,0,0,0.226);
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+        .food{
+            position: absolute;
+            width:30px;
+            height:30px;
+            background-image: url('../img/wsc.jpg');
+            background-size: cover;
+            border-radius: 50%;
+        }
+        .score{
+            color:#fff;
+        }
+        .div_btn{
+            width:100%;
+            position:fixed;
+        }
+        .back{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div_btn">
+        <img class="back" id="btn" src="../img/back.png" alt="back">
+    </div>
+    <script src="../js/snake.js"></script>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick=function(){
+            window.history.go(-1); 
+        }
+    </script>
+</body>
+</html>
