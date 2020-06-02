@@ -91,6 +91,7 @@ var game=(function(){//单例模式
             if(this._snake[0][0]*30<0||this._snake[0][0]*30>870||this._snake[0][1]*30<0||this._snake[0][1]*30>570){//碰壁 判断
                     clearInterval(timecount);
                     this._span.innerHTML='GAME OVER'
+                    window.alert("你好菜哦！")
             }
             this.createsnake();
         }
