@@ -10,6 +10,7 @@
         * {
             margin: 0;
             padding: 0;
+            border:1px solid red;
         }
 
         html,
@@ -32,14 +33,14 @@
 
         main {
             height: 100%;
-            width: 600px;
+            padding:0 10%;
             display: flex;
             align-items: center;
             flex-direction: column;
         }
 
         .logo_box {
-            margin-top: 100px;
+            margin-top: 10%;
         }
 
         .logo {
@@ -65,12 +66,13 @@
 
         .btn_box {
             display: flex;
+            width:100%;
             flex-direction: column;
             margin-top: 30px;
         }
 
         .btn {
-            padding: 12px 150px;
+            padding: 12px 5%;
             border-radius: 8px;
             background-color: #28C76F;
             border: 0;
@@ -99,7 +101,6 @@
 
 <body>
     <div class="box">
-        <div class="top" id="city"></div>
         <main>
             <div class="logo_box">
                 <img class="logo" src="./img/logo.png" alt="logo">
@@ -118,10 +119,8 @@
             </div>
         </main>
     </div>
-    <!-- <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> -->
     <script>
-        // var city = document.getElementById("city");
-        // city.innerHTML = `欢迎来自 ${returnCitySN["cname"]}的朋友!`;
+    
         var btn = document.getElementsByTagName('Button');
         btn[0].onclick = function () {
             window.location.href = "./pages/jianli.html";
