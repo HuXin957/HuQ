@@ -20,11 +20,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding:50px 50px 0 50px;
+            padding: 50px 50px 0 50px;
         }
 
         .box .main_box {
-            width: 800px;
+            max-width: 800px;
             height: 160px;
             padding: 20px;
             display: flex;
@@ -40,6 +40,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+
         }
 
         .box .main_box main {
@@ -57,6 +58,7 @@
             color: dodgerblue;
             text-decoration: none;
             font-size: 14px;
+            min-width: 58px;
         }
 
         footer {
@@ -82,6 +84,7 @@
         .time {
             margin-right: 18px;
         }
+
         .copyright {
             display: flex;
             flex: 1;
@@ -92,6 +95,38 @@
             font-size: 14px;
             color: #999;
         }
+
+        @media screen and (max-width: 500px) {
+            .box{
+                padding-top: 0;
+            }
+            .time {
+                margin-right: 5px;
+            }
+
+            footer {
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .author {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .div_btn {
+                width: 100%;
+                position: relative;
+                margin:20px 0;
+                
+            }
+            .back {
+            margin-left: 0;
+        }
+        }
     </style>
 </head>
 
@@ -101,7 +136,7 @@
             <img class="back" id="btn" src="../img/back.png" alt="back">
         </div>
         <div class="main_box">
-            <p>经典面试题:1000瓶药，1瓶有毒，找毒药</p>
+            <p>经典面试题:1000瓶药，1瓶有毒</p>
             <main>
                 问：现有1000瓶药，其中999瓶无毒，只有一瓶有毒。已知小白鼠喝了毒药1小时后会死，现给你10只小白鼠，和1个小时的时间，让你找出有毒的那瓶药。
                 备注：每一瓶药的量足够每只小白鼠同时服用。
