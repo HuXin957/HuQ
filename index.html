@@ -89,9 +89,10 @@
         .btn:focus {
             outline: 0;
         }
-        .top{
+
+        .top {
             padding: 10px;
-            color:#333;
+            color: #333;
         }
     </style>
 </head>
@@ -117,10 +118,10 @@
             </div>
         </main>
     </div>
-    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <!-- <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> -->
     <script>
-        var city=document.getElementById("city");
-        city.innerHTML=`欢迎来自 ${returnCitySN["cname"]}的朋友!`;
+        // var city = document.getElementById("city");
+        // city.innerHTML = `欢迎来自 ${returnCitySN["cname"]}的朋友!`;
         var btn = document.getElementsByTagName('Button');
         btn[0].onclick = function () {
             window.location.href = "./pages/jianli.html";
