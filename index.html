@@ -10,7 +10,6 @@
         * {
             margin: 0;
             padding: 0;
-            border:1px solid red;
         }
 
         html,
@@ -33,14 +32,13 @@
 
         main {
             height: 100%;
-            padding:0 10%;
             display: flex;
             align-items: center;
             flex-direction: column;
         }
 
         .logo_box {
-            margin-top: 10%;
+            margin-top: 20%;
         }
 
         .logo {
@@ -66,7 +64,7 @@
 
         .btn_box {
             display: flex;
-            width:100%;
+            width: 100%;
             flex-direction: column;
             margin-top: 30px;
         }
@@ -96,6 +94,32 @@
             padding: 10px;
             color: #333;
         }
+
+        @media screen and (max-width: 500px) {
+            .btn {
+                padding: 6px 5%;
+                border-radius: 8px;
+                background-color: #28C76F;
+                border: 0;
+                font-size: 12px;
+                margin-bottom: 10px;
+                color: #fff;
+                position: relative;
+                z-index: 99;
+            }
+            .btn_box{
+                width:225px;
+            }
+            .logo{
+                width:75px;
+                height:75px;
+            }
+            .name {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+        }
+        }
     </style>
 </head>
 
@@ -120,7 +144,6 @@
         </main>
     </div>
     <script>
-    
         var btn = document.getElementsByTagName('Button');
         btn[0].onclick = function () {
             window.location.href = "./pages/jianli.html";
