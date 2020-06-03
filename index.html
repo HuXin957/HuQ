@@ -24,7 +24,8 @@
             height: 100%;
             overflow: hidden;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             position: relative;
             background-image: linear-gradient(#79F1A4, #79F1A4);
         }
@@ -38,7 +39,7 @@
         }
 
         .logo_box {
-            margin-top: 200px;
+            margin-top: 100px;
         }
 
         .logo {
@@ -88,12 +89,16 @@
         .btn:focus {
             outline: 0;
         }
+        .top{
+            padding: 10px;
+            color:#333;
+        }
     </style>
 </head>
 
 <body>
-
     <div class="box">
+        <div class="top" id="city"></div>
         <main>
             <div class="logo_box">
                 <img class="logo" src="./img/logo.png" alt="logo">
@@ -112,8 +117,10 @@
             </div>
         </main>
     </div>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script>
-
+        var city=document.getElementById("city");
+        city.innerHTML=`欢迎来自 ${returnCitySN["cname"]}的朋友!`;
         var btn = document.getElementsByTagName('Button');
         btn[0].onclick = function () {
             window.location.href = "./pages/jianli.html";
@@ -130,6 +137,7 @@
         btn[4].onclick = function () {
             window.location.href = "./pages/game.html";
         }
+        console.log(returnCitySN["cip"]);
     </script>
     <script>
         ! function () {
