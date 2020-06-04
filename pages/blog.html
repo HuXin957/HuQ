@@ -40,7 +40,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-
         }
 
         .box .main_box main {
@@ -97,11 +96,17 @@
         }
 
         @media screen and (max-width: 500px) {
-            .box{
+            .box {
                 padding-top: 0;
             }
+
             .time {
                 margin-right: 5px;
+            }
+
+            .box .main_box {
+                min-width: 287px;
+
             }
 
             footer {
@@ -109,6 +114,10 @@
                 flex: 1;
                 justify-content: space-between;
                 align-items: center;
+            }
+
+            .box div p {
+                width: 287px;
             }
 
             .author {
@@ -120,12 +129,13 @@
             .div_btn {
                 width: 100%;
                 position: relative;
-                margin:20px 0;
-                
+                margin: 20px 0;
+
             }
+
             .back {
-            margin-left: 0;
-        }
+                margin-left: 0;
+            }
         }
     </style>
 </head>
